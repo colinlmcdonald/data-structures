@@ -24,8 +24,10 @@ queueMethods.enqueue = function(value) {
 queueMethods.dequeue = function() {
   var dequeued = this.storage[this.lowestIndex];
   delete this.storage[this.lowestIndex];
-  this.highestIndex--;
-  this.count--;
+  this.lowestIndex++;
+  if (this.count) {
+    this.count--;
+  }
 
   return dequeued;
 }
