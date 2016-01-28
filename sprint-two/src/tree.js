@@ -2,9 +2,10 @@ var Tree = function(value){
   var newTree = {};
   _.extend(newTree, treeMethods);
 
-
+  newTree.count = 0;
   newTree.value = value;
   newTree.children = {};
+
 
   return newTree;
 };
@@ -14,20 +15,28 @@ var Tree = function(value){
 var treeMethods = {};
 
 treeMethods.addChild = function(value){
-  this.children['value'] = value;
+  this.children[this.count] = Tree(value);
+  this.count++;
 };
 
-treeMethods.contains = function(target){
-  var child = this.children;
-  for (var key in child) {
-    if (child[key] === target) {
-      return true;
-    } else {
-      return false;
-    }
+treeMethods.contains = function(target){ 
+  //recursion function
+  var found = false;
+    var keepSearching = function(node) {
+      for (var key in node) {
+        if (node[key].value === target) {
+          found = true;
+          return found;
+        } 
+        else{ 
+          found = keepSearching(node[key].children);
+        } 
+      }
+      return found;
   }
-}; 
 
+  return keepSearching(this.children);
+}; 
 
 /*
  * Complexity: What is the time complexity of the above functions?
