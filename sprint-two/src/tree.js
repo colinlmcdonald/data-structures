@@ -1,29 +1,40 @@
 var Tree = function(value){
   var newTree = {};
-  newTree.value = value;
+  _.extend(newTree, treeMethods);
 
-  // your code here
-  newTree.children = null;  // fix me
+
+  newTree.value = value;
+  newTree.children = {};
+  newTree.children.value = [];
 
   return newTree;
 };
 
 
-  // your code here
-  newTree.children = null;  // fix me
-
 
 var treeMethods = {};
 
-treeMethods.addChild = function(value){
-
+treeMethods.addChild = function(val){
+  this.children.value = val;
 };
 
 treeMethods.contains = function(target){
-
+  for (var i = 0; i < this.children.length; i++) {
+    if (this.children[i] === target) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 };
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+/*  it('should be able to add children to a tree\'s child', function() {
+    tree.addChild(5);
+    tree.children[0].addChild(6);
+    expect(tree.children[0].children[0]).to.equal(6);
+  });*/
