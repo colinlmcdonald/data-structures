@@ -1,4 +1,4 @@
-describe('linkedList', function() {
+/*describe('linkedList', function() {
   var linkedList;
 
   beforeEach(function() {
@@ -53,3 +53,4 @@ describe('linkedList', function() {
 
   // add more tests here to test the functionality of linkedList
 });
+*/
