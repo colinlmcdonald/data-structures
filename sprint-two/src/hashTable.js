@@ -4,7 +4,11 @@ var HashTable = function(){
 };
 
 HashTable.prototype.insert = function(k, v){
-  var i = getIndexBelowMaxForKey(k, this._limit);
+    //k is the first name, v is the last name,
+    //i = 3
+    var set = this._storage.sett
+    var i = getIndexBelowMaxForKey(k, this._limit);
+    this._storage.set
 };
 
 HashTable.prototype.retrieve = function(k){

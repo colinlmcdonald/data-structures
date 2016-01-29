@@ -14,11 +14,16 @@
 var LimitedArray = function(limit){
   var storage = [];
 
+  //add get, set, each to limited array
   var limitedArray = {};
+
+  //get takes in an index, checks the limit of that index, returns the value of storage at index
   limitedArray.get = function(index){
     checkLimit(index);
     return storage[index];
   };
+
+  //set takes in an index and a value, checks the limit of that index, sets the value of storage at index
   limitedArray.set = function(index, value){
     checkLimit(index);
     storage[index] = value;
