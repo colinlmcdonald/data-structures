@@ -33,10 +33,10 @@ describe('graph', function() {
     graph.addNode('penguins');
     graph.addEdge('penguins', 'puppies');
     expect(graph.hasEdge('penguins', 'puppies')).to.equal(true);
-   // expect(graph.hasEdge('penguins', 'kittens')).to.equal(false);
+    expect(graph.hasEdge('penguins', 'kittens')).to.equal(false);
   });
 
-/*  it('should remove edges between nodes', function() {
+  it('should remove edges between nodes', function() {
     graph.addNode('apples');
     graph.addNode('satsumas');
     graph.addEdge('satsumas', 'apples');
@@ -58,5 +58,5 @@ describe('graph', function() {
     expect(graph.hasEdge('kittens', 'satsumas')).to.equal(true);
     expect(graph.hasEdge('penguins', 'satsumas')).to.equal(true);
     expect(graph.hasEdge('satsumas', 'satsumas')).to.equal(true);
-  });*/
+  });
 });
