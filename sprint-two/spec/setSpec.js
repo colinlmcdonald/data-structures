@@ -1,4 +1,4 @@
-describe('set', function() {
+/*describe('set', function() {
   var set;
 
   beforeEach(function() {
@@ -25,3 +25,4 @@ describe('set', function() {
   });
 
 });
+*/
