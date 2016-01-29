@@ -16,7 +16,7 @@ var LimitedArray = function(limit){
 
   //add get, set, each to limited array
   var limitedArray = {};
-
+  
   //get takes in an index, checks the limit of that index, returns the value of storage at index
   limitedArray.get = function(index){
     checkLimit(index);

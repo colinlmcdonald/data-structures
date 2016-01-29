@@ -7,7 +7,7 @@ describe('hashTable', function() {
     hashTable = new HashTable();
   });
 
-  it('should have methods named "insert", "remove", and "retrieve', function() {
+/*  it('should have methods named "insert", "remove", and "retrieve', function() {
     expect(hashTable.insert).to.be.a("function");
     expect(hashTable.remove).to.be.a("function");
     expect(hashTable.retrieve).to.be.a("function");
@@ -21,9 +21,9 @@ describe('hashTable', function() {
   it('should not contain values that were not inserted', function() {
     hashTable.insert('Steven', 'Spielberg');
     expect(hashTable.retrieve('Steven')).not.to.equal('Seagal');
-  });
+  });*/
 
-/*  it('should overwrite values that have the same key', function() {
+  it('should overwrite values that have the same key', function() {
     hashTable.insert('Bob', 'Loblaw');
     hashTable.insert('Bob', 'Barker');
     expect(hashTable.retrieve('Bob')).to.equal('Barker');
@@ -34,7 +34,7 @@ describe('hashTable', function() {
     hashTable.remove('Steven');
     expect(hashTable.retrieve('Steven')).to.equal(null);
   });
-
+/*
   it('should handle hash function collisions', function(){
     var v1 = "val1";
     var v2 = "val2";
