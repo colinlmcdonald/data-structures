@@ -1,20 +1,37 @@
 var BinarySearchTree = function(value){
-  var search = {};
-  _.extend(search, searchTree);
+  var tree = {};
+  _.extend(tree, searchTree);
+  tree.value = value;
+  tree.left = null;
+  tree.right = null;
 
-  return search;
+  return tree;
 };
 
   var searchTree = {};
 
   //takes a value, puts it in correct position
-  //if the value of the node is greater than, go left, less than, go right
+  //if the value of the node we're inserting is greater than, go right, less than, go left
   searchTree.insert = function(value) {
 
   };
 
   //returns a boolean
   searchTree.contains = function(value) {
+    var found = false;
+    if (this.value === value) {
+      found = true;
+    }
+    var recursiveFunction = function(node) {
+      if (value < this.value) {
+        found = recursiveFunction(this.left);
+      } else if (value > this.value) {
+        found = recursiveFunction(this.right);
+      }
+    };
+
+    
+    return found;
 
   };
 
