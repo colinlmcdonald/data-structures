@@ -13,7 +13,54 @@ var BinarySearchTree = function(value){
   //takes a value, puts it in correct position
   //if the value of the node we're inserting is greater than, go right, less than, go left
   searchTree.insert = function(value) {
+    //if the value we're inputting is less than the initial value, and this.left is undefined
 
+
+    //problem is my recursion is writing over all my values
+/*    var recursiveFunction = function(node) {
+      //loop 
+      for (var key in node) {
+        if (value < node[key]) {
+          if (node[key] === null) {
+            node.left = BinarySearchTree(value);
+          } 
+          else {
+            recursiveFunction(node.left);
+          }
+        }
+        if (value > node[key]) {
+          if (node[key] === null) {
+            node.right = BinarySearchTree(value);
+          } else {
+            recursiveFunction(node.right);
+          }
+        }
+      }
+    };*/
+
+    if (value < this.value) {
+      if (this.left === null) {
+        this.left = BinarySearchTree(value);
+      } else {
+        this.left.insert(value);
+       // recursiveFunction(this.left);
+      }
+    }
+
+    if (value > this.value) {
+      if (this.right === null) {
+        this.right = BinarySearchTree(value);
+      } else {
+        this.right.insert(value);
+        //recursiveFunction(this.right);
+      }
+    }
+
+    else {
+      return;
+    }
+
+    console.log(this);
   };
 
   //returns a boolean
