@@ -19,7 +19,6 @@ HashTable.prototype.insert = function(k, v){
     } else {
       var collision = storage.get(i);
       for (var i = 0; i < collision.length; i++) {
-        console.log(collision[i][0]);
         if (collision[i][0] === k) {
           collision[i] = insertionArray;
         } else {

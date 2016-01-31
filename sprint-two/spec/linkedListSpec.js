@@ -1,4 +1,4 @@
-/*describe('linkedList', function() {
+describe('linkedList', function() {
   var linkedList;
 
   beforeEach(function() {
@@ -51,6 +51,15 @@
     expect(linkedList.contains(4)).to.equal(false);
   });
 
+  it('should designate a new head and shift all the nodes', function(){
+    linkedList.addToHead(5);
+    linkedList.addToTail(6);
+    linkedList.addToHead(7);
+    expect(linkedList.head.value).to.equal(7);
+    expect(linkedList.head.next.value).to.equal(5);
+    expect(linkedList.head.next.next.value).to.equal(6);
+    expect
+  });
+
   // add more tests here to test the functionality of linkedList
 });
-*/

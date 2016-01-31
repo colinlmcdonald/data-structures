@@ -2,6 +2,89 @@ var LinkedList = function() {
   var list = {};
   list.head = null;
   list.tail = null;
+
+  list.addToTail = function(value) {
+    var currentNode = Node(value);
+    if (!list.head){
+      list.head = currentNode; 
+    }
+
+    if (list.tail){
+      list.tail.next = currentNode;
+    }
+
+    list.tail = currentNode;
+
+    if (list.head.next === null) {
+      list.head.next = currentNode;
+    }
+  };
+
+  list.addToHead = function(value) {
+    var offWith = list.head;
+    list.head = Node(value);
+    list.head.next = offWith;
+  };
+
+  list.removeHead = function() {
+   var beheadedVal = list.head;
+   var currentNode = list.head;
+    list.head = currentNode.next,
+    currentNode = null;
+   return beheadedVal.value;
+  };
+
+  list.contains = function(target) {
+    if (list.head.value === target){
+      return true;
+    } 
+    var found = false;
+
+    var recursiveFunction = function(currentNode) {
+      if (currentNode.value === target){
+        found = true;
+      } else {
+        if (currentNode.next) { 
+          list.contains(currentNode.next);
+        }
+      }
+     }
+     
+     if (list.head.next) {
+      recursiveFunction(list.head.next);
+     }
+     return found;
+    };
+
+  return list;
+};
+
+var Node = function(value){
+  var node = {};
+
+  node.value = value;
+  node.next = null;
+
+  return node;
+};
+
+
+/*Create a doubly-linked-list, with all the methods of your linked list, and add the following properties:
+An .addToHead() method which takes a value and adds it to the front of the list.
+A .removeTail() method which removes the last node from the list and returns its value.
+Note: each node object will need to have a new .previous property pointing to the node behind it (or to null when appropriate); this is what makes it a doubly-linked list.
+*/
+
+
+
+
+
+
+
+/*var LinkedList = function() {
+  var list = {};
+  list.head = null;
+  list.tail = null;
   list.count = 0;
 
   list.addToTail = function(value) {
@@ -42,7 +125,7 @@ var Node = function(value){
   node.next = null;
 
   return node;
-};
+};*/
 /*var LinkedList = function(){
   var list = {};
   list.head = {};

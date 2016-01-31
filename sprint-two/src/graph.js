@@ -19,11 +19,12 @@ Graph.prototype.addNode = function(node){
 Graph.prototype.contains = function(node){
   var holder = this.nodeHolder;
   for (var i = 0; i < holder.length; i++) {
+    debugger;
     if (holder[i] === node) {
       return true;
+  return false; //why was this returning undefined when the return was in the for loop?
     }
   }
-  return false; //why was this returning undefined when the return was in the for loop?
 };
 
 // ------------------------
@@ -81,6 +82,10 @@ Graph.prototype.forEachNode = function(cb){
     }
   }
 };
+
+var myGraph = new Graph();
+myGraph.addNode(9);
+console.log(myGraph.contains(9));
 
 /*
  * Complexity: What is the time complexity of the above functions?

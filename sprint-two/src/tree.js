@@ -5,7 +5,7 @@ var Tree = function(value){
   newTree.count = 0;
   newTree.value = value;
   newTree.children = {};
-
+  // debugger;
 
   return newTree;
 };
@@ -47,3 +47,16 @@ treeMethods.contains = function(target){
     tree.children[0].addChild(6);
     expect(tree.children[0].children[0]).to.equal(6);
   });*/
+
+var ourTree = Tree(7);
+
+
+ourTree.addChild(11);
+
+
+console.log(ourTree);
+
+console.log(ourTree.contains(7));
+
+// ourTree.contains(7);
+

@@ -64,15 +64,17 @@ var BinarySearchTree = function(value){
   // which accepts a callback and executes it on every value contained in the tree.
   searchTree.depthFirstLog = function(callback) {
     //loop through the tree
-    for (var key in this) {
-      if (key === value) {
-        callback(this[key]);
-      }
-      console.log(this[key])
-      if (typeof this[key] === 'object') {
-        console.log('hi');
+    var recursiveFunction = function(node) {
+      for (var key in node) {
+        if (key === 'value') {
+          callback(node[key]);
+        }
+        if (typeof node[key] === 'object') {
+          recursiveFunction(node[key]);
+        }
       }
     }
+    return recursiveFunction(this);
   };
 
 
